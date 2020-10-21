@@ -20,23 +20,23 @@ function preload()
 }
 
 function setup() {
-	createCanvas(800, 700);
+	createCanvas(1200, 700);
 
 
 	engine = Engine.create();
 	world = engine.world;
 
-	tree = new Tree(700,400,200,0);
-	ground = new Ground(400,699,800,10);
+	tree = new Tree(850,450,500,0);
+	ground = new Ground(800,700,2000,10);
 	stone = new Stone(150,600,80,80);
 
 	boy = createSprite(200,640,70,70);
 	boy.addImage(boyImage);
 	boy.scale = 0.1;
 
-	mango = new Mango(620,550,50,50);
-	mango2 = new Mango(680,550,50,50);
-	mango3 = new Mango(740,550,50,50);
+	mango = new Mango(800,400);
+	mango2 = new Mango(880,350);
+	mango3 = new Mango(940,365);
 	slingshot = new SlingShot(stone.body,{x:150, y:600});
 
 	//Create the Bodies Here.
@@ -74,9 +74,9 @@ function draw() {
 
 
 function mouseDragged(){
-    if (gameState!=="launched"){
+    //if (gameState!=="launched"){
         Matter.Body.setPosition(stone.body, {x: mouseX , y: mouseY});
-    }
+    //}
 }
 
 function mouseReleased(){
